@@ -22,3 +22,7 @@ func _process(_delta):  #underscore indicates that we are not using the delta
 	if Input.is_action_pressed("secondary action") and can_grenade:
 		print('Shoot grenade')
 		can_grenade = false
+
+
+func _on_timer_timeout():
+	can_laser = true
