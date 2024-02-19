@@ -1,0 +1,30 @@
+[gd_scene load_steps=8 format=3 uid="uid://l3p50gjku5k7"]
+
+[ext_resource type="Script" path="res://scenes/level.gd" id="1_0a2p0"]
+[ext_resource type="Texture2D" uid="uid://drdt2bpy2e8uh" path="res://icon.svg" id="1_tgycm"]
+[ext_resource type="Script" path="res://scenes/Logo.gd" id="2_nvtes"]
+[ext_resource type="PackedScene" uid="uid://0kwqur822bbw" path="res://scenes/player.tscn" id="4_7t21a"]
+[ext_resource type="PackedScene" uid="uid://drxb4u5qni3wp" path="res://scenes/bed.tscn" id="5_6re7j"]
+[ext_resource type="PackedScene" uid="uid://c3ec2n8l2q3qs" path="res://scenes/toilet.tscn" id="6_ftfed"]
+[ext_resource type="PackedScene" uid="uid://wn5d1bp8qtjm" path="res://scenes/drone.tscn" id="7_ui45r"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_0a2p0")
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(-353, -595)
+texture = ExtResource("1_tgycm")
+script = ExtResource("2_nvtes")
+
+[node name="Bed" parent="." instance=ExtResource("5_6re7j")]
+position = Vector2(746, -67)
+
+[node name="Player" parent="." instance=ExtResource("4_7t21a")]
+position = Vector2(792, 491)
+
+[node name="Toilet" parent="." instance=ExtResource("6_ftfed")]
+position = Vector2(131, 511)
+rotation = 4.71239
+
+[node name="Drone" parent="." instance=ExtResource("7_ui45r")]
+position = Vector2(178, 229)
