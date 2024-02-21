@@ -10,23 +10,24 @@ size = Vector2(854, 339)
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_oaorj")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Gate" type="StaticBody2D" parent="."]
+position = Vector2(-1, 0)
 
-[node name="Gate" type="Sprite2D" parent="StaticBody2D"]
+[node name="Gate" type="Sprite2D" parent="Gate"]
 position = Vector2(528, -533)
 texture = ExtResource("2_x1cgh")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Gate"]
 polygon = PackedVector2Array(-901, -1306, -901, 33, -871, 130, -821, 184, -763, 224, -686, 241, 151, 238, 148, -78, 1029, -62, 1033, 234, 1874, 238, 1948, 231, 2008, 191, 2059, 110, 2086, -1, 2086, -1310)
 
-[node name="Area2D" type="Area2D" parent="StaticBody2D"]
+[node name="Area2D" type="Area2D" parent="Gate"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gate/Area2D"]
 position = Vector2(589, 146)
 shape = SubResource("RectangleShape2D_htotf")
 
 [node name="Player" parent="." instance=ExtResource("1_0t33d")]
 position = Vector2(551, 532)
 
-[connection signal="body_entered" from="StaticBody2D/Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="StaticBody2D/Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Gate/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Gate/Area2D" to="." method="_on_area_2d_body_exited"]
